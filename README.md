@@ -1,66 +1,36 @@
-## Foundry
+# **CREATE2 Exercise: Uniswap Pair Factory**
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# **Objective**
 
-Foundry consists of:
+Create a factory contract that deploys new token pair contracts using CREATE2, mimicking Uniswap's pair creation mechanism.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+# Outcomes
 
-## Documentation
+This exercise will give students practical experience with CREATE2 in a context similar to Uniswap, helping them understand its application in DeFi protocols. It demonstrates how CREATE2 enables predetermining contract addresses without on-chain lookups, which is crucial for gas efficiency and user experience in decentralized exchanges.
 
-https://book.getfoundry.sh/
+# To-Do
 
-## Usage
+1. Implement `createPair` function that creates a pool of 2 tokens and deploys the same using CREATE2 opcode.
+2. Implement `calculatePairAddress` function that calculates the pair address of the two tokens.
+3. Implement a `getPair` function that returns the pair address for two tokens, creating the pair if it doesn't exist yet.
 
-### Build
+# How to solve
 
-```shell
-$ forge build
-```
+- Git clone the Repo
 
-### Test
+- Install dependencies
+    ```shell
+    $ forge install
+    ```
+- Fill in the code for the functions.
+- Run the following command and make sure all the test cases are passing.
+    ```shell
+    $ forge test
+    ```
 
-```shell
-$ forge test
-```
+# Reading Materials
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- [Understanding Keccak256 Hash](https://he3.app/en/blogs/understanding-keccak256-hash-a-guide-for-developers/)
+- [Usage of abi.encodePacked](https://medium.com/coinmonks/abi-encode-abi-encodepacked-and-abi-decode-in-solidity-42c19336a589)
+- [Type casting in Solidity](https://medium.com/coinmonks/learn-solidity-lesson-22-type-casting-656d164b9991)
+- [CREATE2 EIP](https://eips.ethereum.org/EIPS/eip-1014)
